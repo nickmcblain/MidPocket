@@ -8,5 +8,8 @@
  *
  * Main module of the application.
  */
-angular
-  .module('midpocketApp', []);
+var app = angular.module('midpocketApp', []);
+
+  app.controller('MainController', function($scope) {
+  	$('.collapsible').collapsible({ "accordion" : false });
+  });
