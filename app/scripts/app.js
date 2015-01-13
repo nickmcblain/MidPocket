@@ -10,6 +10,49 @@
  */
 var app = angular.module('midpocketApp', []);
 
-  app.controller('MainController', function($scope) {
-  	$('.collapsible').collapsible({ "accordion" : false });
+  app.controller('NavController', function($scope, $timeout) {
+  	$scope.menuItems = [
+  		{
+  			header: 'Sticks',
+  			subheaders: [
+  				{	
+  					header: 'Mens',
+	  				subheaders: [
+	  					{header: 'Strung'},
+	  					{header: 'Unstrung'}
+	  				]
+  				},
+  				{
+  					header: 'Womens',
+	  				subheaders: [
+	  					{header: 'Strung'},
+	  					{header: 'Unstrung'}
+	  				]
+  				}
+  			]
+  		},
+  		{
+  			header: 'Helmets',
+  			subheaders: [
+  				{	
+  					header: 'Mens',
+	  				subheaders: [
+	  					{header: 'Big'},
+	  					{header: 'Small'}
+	  				]
+  				},
+  				{
+  					header: 'Womens',
+	  				subheaders: [
+	  					{header: 'Big'},
+	  					{header: 'Small'}
+	  				]
+  				}
+  			]
+  		}
+  	];
+
+  	$timeout(function() {
+  		$('.collapsible').collapsible({ "accordion" : false });
+  	}, 10);
   });
